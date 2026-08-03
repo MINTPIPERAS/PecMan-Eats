@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Dinosaur-Eats",
+  "version": "0.1.0",
+  "description": "吃豆人在你的网页上逐行吃掉页面内容",
+  "icons": {
+    "16": "icons/dino-16.png",
+    "48": "icons/dino-48.png",
+    "128": "icons/dino-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/pacman.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/canvas-layer.js", "src/bg-sampler.js", "src/dino.js", "src/content.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [],
+  "host_permissions": ["<all_urls>"]
+}
